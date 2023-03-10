@@ -28,6 +28,14 @@ class ParagraphNode extends TextNode {
       putMetadataValue("blockType", const NamedAttribution("paragraph"));
     }
   }
+
+  ParagraphNode copyWith({String? id, AttributedText? text, Map<String, dynamic>? metadata}) {
+    return ParagraphNode(
+      id: id ?? this.id,
+      text: text ?? this.text,
+      metadata: metadata ?? this.metadata,
+    );
+  }
 }
 
 class ParagraphComponentBuilder implements ComponentBuilder {
